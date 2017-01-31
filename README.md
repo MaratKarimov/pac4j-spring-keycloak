@@ -21,23 +21,25 @@ $ java -Dswarm.port.offset=100 -jar keycloak-2017.1-swarm.jar
 You must import new realm 'saml-demo': upload 'src/main/resources/saml-demo.json' to form: http://localhost:8180/auth/admin/master/console/#/create/realm
 
 Also, for client with name 'http://localhost:8080/pac4j-spring-keycloak/callback?client_name=SAML2Client' of realm with name 'saml-demo' you must import keys from 'src/main/resources/samlKeystore.jks':
+```
 http://localhost:8180/auth/admin/master/console/#/realms/saml-demo/clients -> Choose Client ID 'http://localhost:8080/pac4j-spring-keycloak/callback?client_name=SAML2Client' -> SAML Keys.
-
-Signing Key import from 'src/main/resources/samlKeystore.jks':
-Archive Format: JKS
-Key Alias: pac4j-demo
+```
 
 ### Signing Key import
+```
 Archive Format: JKS
 Key Alias: pac4j-demo
 Store Password: pac4j-demo-passwd
 Import File: 'src/main/resources/samlKeystore.jks'
+```
 
 ### Encryption Key import
+```
 Archive Format: JKS
 Key Alias: pac4j-demo
 Store Password: pac4j-demo-passwd
 Import File: 'src/main/resources/samlKeystore.jks'
+```
 
 # Test
 If you open http://localhost:8080/secured, you must be redirect to Keycloak auth form. After you fill it with 'admin'/'password', you must be redirected to http://localhost:8080/secured.
